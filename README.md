@@ -1,3 +1,16 @@
+
+# Some notes about the assignmment:
+
+1) The app is live at: https://so-user-questions.herokuapp.com/
+2) The app is pretty much responsive - except for some UI issues which I am aware about, but didn't get the time to fix
+3) After fetch requests I have saved the necessary data into localstorage so that the next time I need the data I don't need to make additional requests.
+There are two keys which I add to localStorage: users and questions.
+4) I implemented dark mode via adding CSS classes... I could have implemented this via React.createContext or via global state using a state management system like redux... maybe next time ;)
+5) My first attempt of displaying a question with answers was to simply pass in the question url into an iframe src... this didn't work as stackoverflow doesn't allow this - https://stackoverflow.com/questions/37799258/content-security-policy-directive-frame-ancestors-self?bla=34&bla2=43
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
