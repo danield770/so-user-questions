@@ -1,5 +1,5 @@
 .modal {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: hsla(0, 0%, var(--l-0), 0.5);
   position: fixed;
   height: 100%;
   width: 100%;
@@ -8,6 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: hsl(0, 0%, var(--l-0));
 }
 
 .modal__content {
@@ -16,5 +17,6 @@
   height: 100vh;
   overflow: auto;
   border: 3px solid #333;
-  background: white;
+  background-color: hsl(0, 0%, var(--l-100));
+  color: hsl(0 0% var(--l-0));
 }

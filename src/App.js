@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Header from './components/Header';
 import SearchForm from './components/SearchForm';
 import Results from './components/Results';
+import ColorMode from './components/ColorMode';
 import useFetch from './hooks/useFetch';
 import { constants } from './utils/constants';
 
@@ -72,6 +73,7 @@ function App() {
   return (
     <main className='app'>
       <div className='fixed top-wpr'>
+        <ColorMode />
         <Header text='Get Stack Overflow Posts' />
         <SearchForm
           handleUserSearch={handleUserSearch}

@@ -10,7 +10,7 @@
   border-block-end: 1px solid;
   top: calc(var(--top-bar-height) + var(--user-details-height));
   max-width: 60rem;
-  background-color: white;
+  background-color: hsl(0 0% var(--l-100));
   width: 86%;
 }
 .sort__header {
@@ -24,7 +24,7 @@
 }
 
 .sort__radio:checked + .sort__label {
-  background-color: #ddd;
+  background-color: hsl(0 0% var(--l-87));
 }
 
 .sort__label {
@@ -67,7 +67,7 @@
   border-radius: 3px;
 }
 .question__count--with-bg {
-  background-color: #ddd;
+  background-color: hsl(0 0% var(--l-87));
 }
 .question__title {
   /* justify-self: flex-start; */
@@ -117,6 +117,7 @@
     display: grid;
     grid-template-columns: 10rem auto auto auto;
     width: 96%;
+    padding: 1rem;
   }
   .question {
     grid-template-columns: auto auto auto 1fr;

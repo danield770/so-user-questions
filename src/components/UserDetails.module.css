@@ -1,5 +1,5 @@
 .user-details-wpr {
-  padding: 1rem 0;
+  padding: 1rem;
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: repeat(3, 1fr);
@@ -7,7 +7,7 @@
   text-align: start;
   top: calc(var(--top-bar-height) + 2px);
   max-width: 60rem;
-  background-color: white;
+  background-color: hsl(0 0% var(--l-100));
 }
 .profile__img {
   width: 4rem;

@@ -27,7 +27,7 @@
   justify-content: center;
 }
 .post__score--accepted {
-  background-color: #ddd;
+  background-color: hsl(0 0% var(--l-87));
 }
 .post__body {
   grid-row: 2 / 3;
