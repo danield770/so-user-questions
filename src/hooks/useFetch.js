@@ -23,11 +23,18 @@ function useFetch(url, dataType) {
 
     const getUserData = async () => {
       setIsLoading(true);
-      const res = await fetch(url);
-      const json = await res.json();
+      let json;
+      try {
+        const res = await fetch(url);
+        json = await res.json();
+      } catch (error) {
+        console.log('error: ', error);
+      }
+      //   const res = await fetch(url);
+      //   const json = await res.json();
       setIsLoading(false);
       console.log('setting user data...', json);
-      if (json.error_id !== undefined) {
+      if (json?.error_id !== undefined) {
         setData(json);
         return;
       }
@@ -49,8 +56,8 @@ function useFetch(url, dataType) {
           // hit a new request
           return {
             user_details,
-            next: json.has_more ? getNextUrl(url) : null,
-            questions: [...chooseRelevantUserData(json.items)],
+            next: json?.has_more ? getNextUrl(url) : null,
+            questions: [...chooseRelevantUserData(json?.items)],
           };
         } else {
           return {
@@ -77,7 +84,12 @@ function useFetch(url, dataType) {
       }
 
       setData((prev) => {
-        if (!prev?.answers?.length || prev.question_id !== json.question_id) {
+        // console.log('prev: ', prev);
+        // console.log('json: ', json);
+        if (
+          !prev?.answers?.length ||
+          prev.question_id !== json.items[0].question_id
+        ) {
           // hit a new request
           return {
             question_id: json.items[0]?.question_id,

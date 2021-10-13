@@ -1,0 +1,56 @@
+.user-details-wpr {
+  padding: 1rem 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0.3rem;
+  text-align: start;
+  top: calc(var(--top-bar-height) + 2px);
+  max-width: 60rem;
+  background-color: white;
+}
+.profile__img {
+  width: 4rem;
+  height: 4rem;
+  grid-row: span 3;
+  margin-inline-end: 1rem;
+}
+.profile__name {
+  padding-block: 0.2rem;
+  font-size: 1rem;
+}
+.more-details {
+  display: contents;
+}
+
+.def-list {
+  justify-self: flex-start;
+}
+.term {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.6rem;
+}
+.data {
+  margin: 0;
+}
+.reputation {
+  font-size: 1rem;
+}
+@media (min-width: 768px) {
+  .profile__img {
+    width: 8rem;
+    height: 8rem;
+  }
+  .profile__name {
+    font-size: 2rem;
+  }
+  .reputation {
+    font-size: 1.6rem;
+  }
+  .term {
+    font-size: 0.8rem;
+  }
+}
+@media (min-width: 1200px) {
+}

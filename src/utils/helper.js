@@ -12,6 +12,15 @@ export const getNextUrl = (str) => {
   return arr[0] + '&page=' + (+arr[1] + 1);
 };
 
+export const createDateTimeString = (num) =>
+  `${new Date(num * 1000).toDateString()} at ${new Date(num * 1000)
+    .getHours()
+    .toString()
+    .padStart(2, '0')}:${new Date(num * 1000)
+    .getMinutes()
+    .toString()
+    .padStart(2, '0')}`;
+
 export const chooseRelevantUserData = (items) =>
   items.map(
     ({

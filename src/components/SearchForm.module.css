@@ -1,0 +1,11 @@
+form {
+  max-width: 60rem;
+  margin: auto;
+  width: 100%;
+}
+
+.search__input {
+  width: 96%;
+  height: 2.5rem;
+  padding: 0.2rem 0.5rem;
+}

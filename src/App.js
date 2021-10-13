@@ -50,6 +50,7 @@ function App() {
     results = (
       <Results
         userData={data}
+        onSort={onSort}
         sortBy={sortBy}
         isLoadingMore={isLoading}
         onFetchMore={onFetchMore}
@@ -70,12 +71,13 @@ function App() {
 
   return (
     <main className='app'>
-      <Header text='Get Stack Overflow Posts' />
-      <SearchForm
-        handleUserSearch={handleUserSearch}
-        onSort={onSort}
-        hasData={data.questions.length > 0}
-      />
+      <div className='fixed top-wpr'>
+        <Header text='Get Stack Overflow Posts' />
+        <SearchForm
+          handleUserSearch={handleUserSearch}
+          hasData={data?.questions?.length > 0}
+        />
+      </div>
       {results}
     </main>
   );

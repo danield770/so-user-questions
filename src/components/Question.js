@@ -1,12 +1,14 @@
 // import React, { useState } from 'react';
 import Modal from './Modal';
 import Post from './Post';
+import styles from './Question.module.css';
 
 const Question = ({
   questionProps,
   toggleModal,
   userDetails,
   answerData,
+  answerCount,
   isLoading,
   fetchMoreAnswers,
 }) => {
@@ -30,30 +32,35 @@ const Question = ({
     );
   } else if (isLoading) {
     answerSection = <div className='loading'>Loading...</div>;
-  } else if (answerData.next !== undefined && answerData.answers.length === 0) {
-    answerSection = <div>Sorry, no results found 🙁 </div>;
-  }
+  } // else if (answerData.next !== undefined && answerData.answers.length === 0) {
+  //     answerSection = <div>Sorry, no results found 🙁 </div>;
+  //   }
   return (
     <Modal>
-      <div>
-        <button type='button' onClick={toggleModal}>
-          Close
-        </button>
+      <div className={styles.modal}>
+        <div className={styles.modal__content}>
+          <div>
+            <button type='button' onClick={toggleModal}>
+              Close
+            </button>
+          </div>
+          <Post type='question' {...questionProps} userDetails={userDetails} />
+
+          <h3>{answerCount} Answers</h3>
+          {answerSection}
+          {answerData.next !== null && (
+            <button
+              className={`btn--primary ${isLoading ? 'loading' : ''}`}
+              type='button'
+              onClick={() => {
+                fetchMoreAnswers(answerData.next);
+              }}
+            >
+              {isLoading ? 'Loading...' : 'Load more Answers'}
+            </button>
+          )}
+        </div>
       </div>
-      <Post type='question' {...questionProps} userDetails={userDetails} />
-      <hr />
-      {answerSection}
-      {answerData.next !== null && (
-        <button
-          className={`btn--primary ${isLoading ? 'loading' : ''}`}
-          type='button'
-          onClick={() => {
-            fetchMoreAnswers(answerData.next);
-          }}
-        >
-          {isLoading ? 'Loading...' : 'Load more Answers'}
-        </button>
-      )}
     </Modal>
   );
 };
